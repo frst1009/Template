@@ -1,0 +1,395 @@
+@import './base/reset';
+@import './base/mixin';
+@import './base/color&font';
+@import './components/buttons';
+@import './layouts/media';
+
+/*body{
+    @include minscreensize(phone){
+        background-color: aqua !important;
+    }
+    @include minscreensize(tablet){
+        background-color: blueviolet;
+    }
+}
+button{
+    @extend %btn-shared;
+}*/
+
+/*header{
+    button{
+    @extend %btn-shared;
+}}*/
+nav {
+    width: 100%;
+
+
+    .container {
+        @include container;
+
+        @include minscreensize(desktop) {
+            @include container;
+            font-size: 1.5em;
+        }
+
+        @include minscreensize(tablet) {
+            @include flex;
+            font-size: 2em;
+
+        }
+
+        &__icon {
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+
+
+            i {
+                margin-right: 0.2em;
+                font-size: 1em;
+                color: $link;
+            }
+
+            h2 {
+                font-size: 0.7em;
+            }
+        }
+
+        &__list-items {
+            @include minscreensize(tablet) {
+                display: none;
+            }
+
+            display: flex;
+            font-size: 0.6em;
+            gap: 3em;
+            color: $text-grey;
+
+            &-active {
+                color: black;
+                font-weight: 900;
+            }
+        }
+    }
+}
+
+header {
+    .container {
+        @include container;
+
+        @include minscreensize(desktop) {
+            @include container;
+            font-size: 1.1em;
+        }
+
+        @include minscreensize(tablet) {
+            @include flex;
+            flex-direction: column-reverse;
+
+            text-align: center;
+
+        }
+
+        &__info {
+            margin-right: 7%;
+            padding-right: 4%;
+
+            @include minscreensize(tablet) {
+                margin: 20% 0 0 0;
+                padding: 0;
+            }
+
+            h1 {
+                margin-bottom: 5%;
+            }
+
+            p {
+                color: $text-grey;
+
+            }
+
+            button {
+                @extend %btn-shared;
+                background-color: $link;
+                color: $body;
+            }
+        }
+
+        img {
+            width: 50%;
+            height: 40%;
+
+            @include minscreensize(tablet) {
+                width: 70%;
+                height: 60%;
+            }
+        }
+    }
+}
+
+//  CARDS of service called container
+.services__container {
+    @include flex;
+    @include serviceContainer;
+    flex-direction: column;
+
+    @include minscreensize(tablet) {
+        margin: 1em;
+
+    }
+
+    h3 {
+        font-size: 2.25em;
+    }
+
+    hr {
+        @extend %hr;
+    }
+
+    .services__text {
+        padding: 1.6em 10em;
+        font-size: 1.1em;
+        color: $text-grey;
+
+        @include minscreensize(desktop3) {
+            @include flex;
+            font-size: 0.7em;
+        }
+
+        @include minscreensize(tablet) {
+            padding: 0;
+            margin: 2em;
+            text-align: center
+        }
+
+    }
+
+    .info-cards {
+        @include flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        @include minscreensize(tablet) {
+            margin: 0;
+
+        }
+
+        &-divs {
+            @include minscreensize(desktop3) {
+                @include flex;
+                flex-wrap: wrap;
+                font-size: 0.6em;
+                text-align: center;
+            }
+
+            @include minscreensize(tablet) {
+                margin: 0;
+                padding: 2em;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            background-color: white;
+            width: 30%;
+            height: 60%;
+            padding: 4%;
+            border-radius: 1.5em;
+            margin: 0.5em;
+
+            i {
+                font-size: 200%;
+                color: $link;
+                margin-bottom: 0.3em;
+
+                @include minscreensize(desktop3) {
+                    display: none;
+                }
+            }
+        }
+
+        p {
+            font-size: 0.7em;
+            color: $text-grey;
+            padding-top: 2em;
+        }
+    }
+
+    button {
+        @extend %btn-shared;
+        border: 1px $link solid;
+        color: $link;
+    }
+}
+
+//service CARDS WERE above THIS
+
+//THIS IS COMPLEX LOOKING FLEX CONTAINER
+.info__container {
+    @include serviceContainer;
+    @include flex;
+    flex-direction: row;
+    gap: 10%;
+
+    img {
+        width: 30vw;
+        height: 20vw;
+        margin: 20%;
+    }
+
+    @include minscreensize(desktop2) {
+        @include flex;
+        flex-direction: column;
+        margin: 0;
+        paddinG: 0 20%;
+    }
+
+    &-text {
+        @include minscreensize(desktop2) {
+            margin: 2em;
+            text-align: center;
+        }
+
+        @include minscreensize(desktop3) {
+            font-size: smaller;
+            @include flex;
+            flex-direction: column;
+
+        }
+
+        @include minscreensize(tablet) {
+            font-size: 0, 5em;
+            @include flex;
+            flex-direction: column;
+        }
+
+
+        h3 {
+            font-size: 2.25em;
+        }
+
+        p {
+            color: $text-grey;
+            margin-top: 3em;
+        }
+
+        button {
+            @extend %btn-shared;
+            color: $link;
+            border: 1px $link solid;
+        }
+    }
+}
+
+//above suits COMPLEX LOOKING FLEX CONTAINER
+
+//blue container
+
+//blue container was above this
+//customer info part
+.art__cards {
+    @include serviceContainer;
+    h3 {
+        font-size: 2.25em;
+        text-align: center;
+    }
+    
+    hr {
+        @extend %hr;
+        margin: 1.6em auto auto auto;
+    }
+
+
+    &-info {
+        @include flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 3.2em;
+
+        .card {
+            width: 30%;
+            height: 30%;
+        }
+
+        h5 {
+            font-size: 1em;
+            padding: 1.8em;
+
+        }
+
+        p {
+            color: $text-grey;
+            font-size: 1em;
+            padding: 1.8em;
+
+        }
+
+        a {
+            color: $link;
+            padding: 1.8em;
+        }
+    }
+
+    button {
+        padding: 1.8em;
+        @extend %btn-shared;
+        border: 1px $link solid;
+        color: $link;
+        padding: 1em;
+        margin: 4em auto auto auto;
+    }
+}
+
+footer {
+    width: 100%;
+    background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        margin: 5em 0 5em 0;
+
+        &__icon {
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            i {
+                margin-right: 0.3em;
+            }
+
+            h4 {
+                color: white;
+            }
+        }
+
+        &__info {
+            padding-top: 1em;
+        }
+
+        p {
+            color: $text-white;
+        }
+    }
+
+    .container {
+        @include flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .company {
+            margin-right: 5em;
+
+            p {
+                color: $text-white;
+                padding-top: 1em;
+            }
+
+        }
+
+    }
+}

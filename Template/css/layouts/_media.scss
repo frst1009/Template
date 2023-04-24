@@ -1,0 +1,29 @@
+$mobile: 400px;
+$tableth: 800px;
+$desktop: 1200px;
+$break-point: 1540px;
+
+@mixin minscreensize($device)
+{
+    
+    @if $device == phone{
+        @media only screen and (max-width: $mobile)
+        {@content;}
+    }
+    @if $device == tablet{
+        @media only screen and (max-width: $tablet)
+        {@content;}
+    }
+    @if $device == desktop{
+        @media only screen and (min-width: $desktop)
+        {@content;}
+    }
+    @if $device == desktop3{
+        @media only screen and (max-width: $desktop)
+        {@content;}
+    }
+    @if $device == desktop2{
+        @media only screen and (max-width: $break-point){
+        @content;
+    }}
+}

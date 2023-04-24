@@ -1,0 +1,14 @@
+@mixin flex {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+@mixin container {
+    display: flex;
+    margin: 2em 5.3em 3em 5.3em;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin serviceContainer{
+    margin: 10em;
+}
